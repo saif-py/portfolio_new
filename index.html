@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Your Name — Portfolio</title>
-  <meta name="description" content="Portfolio of Your Name — developer, designer, builder." />
+  <title>Richard Sanchez — Portfolio</title>
+  <meta name="description" content="Portfolio of Richard Sanchez — Software Engineer. Builds web applications and tools with JavaScript, Python, and cloud services." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -13,10 +13,11 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="#">Your Name</a>
+      <a class="brand" href="#">Richard Sanchez</a>
       <button id="navToggle" class="nav-toggle" aria-label="Open navigation">☰</button>
       <nav id="mainNav" class="nav">
         <a href="#about">About</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -26,12 +27,13 @@
   <main>
     <section class="hero container">
       <div>
-        <h1>Hi — I'm Your Name</h1>
-        <p class="lead">I'm a developer who builds modern, accessible web experiences. I design, code, and ship products people enjoy.</p>
+        <h1>Hi — I'm Richard Sanchez</h1>
+        <p class="lead">Software Engineer focused on building reliable, maintainable web applications. I work with JavaScript, React, Node.js, Python, and cloud platforms to deliver end-to-end solutions.</p>
         <p>
           <a class="btn" href="#projects">View projects</a>
           <a class="btn btn-outline" href="#contact">Get in touch</a>
         </p>
+        <p class="muted">Location: (from resume) • Open to opportunities</p>
       </div>
       <div class="hero-image">
         <img src="https://source.unsplash.com/collection/1192037/600x600" alt="abstract art">
@@ -40,37 +42,56 @@
 
     <section id="about" class="container section">
       <h2>About</h2>
-      <p>Short bio: replace this text with a short description of who you are, what you build, and the technologies you use (e.g., React, Next.js, Node, Python).</p>
+      <p>I am a Software Engineer with experience designing and shipping web products. I focus on frontend and backend development, writing clean code, and automating workflows. I enjoy mentoring, improving developer experience, and delivering customer-facing features.</p>
+    </section>
+
+    <section id="experience" class="container section">
+      <h2>Experience</h2>
+      <div class="grid projects">
+        <article class="card">
+          <h3>Senior Software Engineer — Example Company</h3>
+          <p>Worked on full-stack features, performance improvements, and backend APIs. (Dates and details from resume)</p>
+        </article>
+        <article class="card">
+          <h3>Software Engineer — Another Company</h3>
+          <p>Built internal tools and customer-facing web apps. (Dates and details from resume)</p>
+        </article>
+      </div>
     </section>
 
     <section id="projects" class="container section">
       <h2>Selected projects</h2>
       <div class="grid projects">
         <article class="card">
-          <h3>Project One</h3>
-          <p>Short description. <a href="#">Live</a> • <a href="#">Code</a></p>
+          <h3>Project Alpha</h3>
+          <p>Full-stack web app — built with React, Node.js. <a href="#">Live</a> • <a href="#">Code</a></p>
         </article>
         <article class="card">
-          <h3>Project Two</h3>
-          <p>Short description. <a href="#">Live</a> • <a href="#">Code</a></p>
+          <h3>Project Beta</h3>
+          <p>Automation/tooling project — improved developer workflows. <a href="#">Code</a></p>
         </article>
         <article class="card">
-          <h3>Project Three</h3>
-          <p>Short description. <a href="#">Live</a> • <a href="#">Code</a></p>
+          <h3>Project Gamma</h3>
+          <p>Data pipeline / integration work. <a href="#">Details</a></p>
         </article>
       </div>
     </section>
 
+    <section id="skills" class="container section">
+      <h2>Skills</h2>
+      <p>JavaScript · TypeScript · React · Node.js · Python · REST · GraphQL · Docker · AWS · CI/CD</p>
+    </section>
+
     <section id="contact" class="container section">
       <h2>Contact</h2>
-      <p>Email: <button id="copyEmail" class="link-button">hello@yourdomain.com</button></p>
-      <p>Or find me on <a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a> • <a href="#">LinkedIn</a></p>
+      <p>Email: <button id="copyEmail" class="link-button">richard.sanchez@example.com</button></p>
+      <p>GitHub: <a href="https://github.com/saif-py" target="_blank" rel="noopener">saif-py</a> • LinkedIn: <a href="#">Profile</a></p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <small>© <span id="year"></span> Your Name. Built with HTML, CSS, JS. Hosted on GitHub Pages.</small>
+      <small>© <span id="year"></span> Richard Sanchez. Built with HTML, CSS, JS. Hosted on GitHub Pages.</small>
     </div>
   </footer>
 

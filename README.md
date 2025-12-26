@@ -1,29 +1,28 @@
-# Portfolio website
+# Richard Sanchez — Portfolio
 
-This is a minimal, responsive portfolio website you can host on GitHub Pages.
+This repository contains a responsive single-page portfolio site for Richard Sanchez. The site is intended to be hosted on GitHub Pages from the `main` branch (root).
 
-How to use
+Local development
 
-1. Replace placeholder text (Your Name, bio, project links, email) in `index.html`.
-2. Commit and push to GitHub.
+1. Open `index.html` in a browser or use a local static server:
 
-Windows PowerShell commands (replace placeholders):
+    ```powershell
+    cd 'c:\misc\projects\portfolio_new\portfolio_new'
+    # start a simple server (Python must be installed)
+    python -m http.server 8000
+    # then open http://localhost:8000
+    ```
 
-```powershell
-cd 'c:\misc\projects\portfolio_new\portfolio_new'
-git init ; git add . ; git commit -m "Initial portfolio" 
-# create a repo on GitHub (use web UI or gh cli), then add remote:
-# git remote add origin https://github.com/<your-username>/<repo>.git
-git branch -M main ; git push -u origin main
-```
+Edit the content
 
-Enable GitHub Pages
+- Update project links, dates, and detailed experience in `index.html` to match your resume exactly.
+- Replace the placeholder email in `index.html` (currently `richard.sanchez@example.com`) with your real contact email.
 
-- Go to the repository on GitHub -> Settings -> Pages
-- Select branch: `main` and folder: `/ (root)` then Save
-- Your site will be published at `https://<your-username>.github.io/<repo>/`
+Deploy to GitHub Pages
 
-Notes
+1. Ensure the repository is pushed to GitHub and `main` is selected as the Pages source (Settings -> Pages -> Branch: main -> / (root)).
+2. Wait a few minutes and visit: `https://saif-py.github.io/portfolio_new/`
 
-- Update `index.html` with your projects, images, and links.
-- To use a custom domain add a `CNAME` file with your domain and configure DNS.
+License
+
+This template is provided as-is. Replace content as needed.
