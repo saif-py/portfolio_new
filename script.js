@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   });
 
   copyEmail && copyEmail.addEventListener('click', async ()=>{
-    const email = 'hello@yourdomain.com';
+    const email = 'mohdsaifsiddiqui10@gmail.com';
     try{
       await navigator.clipboard.writeText(email);
       copyEmail.textContent = 'Copied!';
