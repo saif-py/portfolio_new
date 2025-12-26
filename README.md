@@ -1,4 +1,4 @@
-# Richard Sanchez — Portfolio
+# saif — Portfolio
 
 This repository contains a responsive single-page portfolio site for Richard Sanchez. The site is intended to be hosted on GitHub Pages from the `main` branch (root).
 

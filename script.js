@@ -44,4 +44,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
     },{threshold:0.25});
     skillFills.forEach(s=>obs.observe(s));
   }
+
+  // Portrait image fallback: if image fails to load, show initials fallback
+  const profileImg = document.getElementById('profileImg');
+  if(profileImg){
+    const wrap = profileImg.closest('.profile-wrap');
+    profileImg.addEventListener('error', ()=>{ if(wrap) wrap.classList.add('failed'); });
+    profileImg.addEventListener('load', ()=>{ if(wrap) wrap.classList.remove('failed'); });
+    // If file missing (browser may not trigger error immediately), check naturalWidth
+    setTimeout(()=>{ if(profileImg.naturalWidth === 0 && profileImg.complete){ if(profileImg.closest('.profile-wrap')) profileImg.closest('.profile-wrap').classList.add('failed'); } }, 300);
+  }
 });
