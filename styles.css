@@ -92,7 +92,20 @@ body{
 
 /* Floating social */
 .social-floating{position:absolute;right:18px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px}
-.social-floating .soc{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:999px;background:linear-gradient(180deg,var(--accent),#06d68a);color:#071024;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,0.5);border:3px solid rgba(255,255,255,0.04)}
+.social-floating .soc{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:999px;background:linear-gradient(180deg,var(--accent),#06d68a);color:#071024;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,0.5);border:3px solid rgba(255,255,255,0.04);position:relative;overflow:visible}
+
+/* label that appears to the right of each social button */
+.soc-label{position:absolute;left:calc(100% + 12px);top:50%;transform:translateY(-50%) translateX(-6px);background:rgba(2,6,23,0.9);color:#dbeafe;padding:8px 12px;border-radius:10px;font-size:0.9rem;white-space:nowrap;opacity:0;pointer-events:none;box-shadow:0 12px 30px rgba(2,6,23,0.7);transition:opacity 220ms ease, transform 220ms cubic-bezier(.2,.9,.3,1)}
+.soc .soc-icon{z-index:2}
+.soc:focus-visible .soc-label, .soc:hover .soc-label{opacity:1;transform:translateY(-50%) translateX(0)}
+.soc:active .soc-label{transform:translateY(-50%) translateX(0) scale(0.99)}
+
+/* slightly offset labels on small screens */
+@media (max-width:800px){
+  .social-floating{right:12px;bottom:18px;top:auto;flex-direction:row}
+  .soc-label{left:auto;top:calc(100% + 10px);transform:translateY(-6px) translateX(0);}
+  .soc:focus-visible .soc-label, .soc:hover .soc-label{opacity:1;transform:translateY(0) translateX(0)}
+}
 
 .lead{color:var(--muted);max-width:48ch}
 .btn{display:inline-block;padding:12px 18px;border-radius:999px;background:var(--accent);color:#071024;text-decoration:none;font-weight:700;margin-right:8px}
