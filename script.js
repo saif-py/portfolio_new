@@ -29,4 +29,19 @@ document.addEventListener('DOMContentLoaded', ()=>{
       if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
     });
   });
+
+  // Animate skill bars when visible
+  const skillFills = document.querySelectorAll('.skill-fill');
+  if(skillFills.length){
+    const obs = new IntersectionObserver((entries, o)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          const el = entry.target; const val = el.getAttribute('data-fill') || 0;
+          el.style.width = val + '%';
+          o.unobserve(el);
+        }
+      });
+    },{threshold:0.25});
+    skillFills.forEach(s=>obs.observe(s));
+  }
 });

@@ -32,6 +32,36 @@ body{
 .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06)}
 .hero-image img{width:100%;border-radius:12px;display:block}
 .section{padding:40px 0}
+/* Section header styling */
+.section h2{display:flex;align-items:center;gap:12px;font-size:1.6rem;margin-bottom:18px}
+.section h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0.35}
+
+/* Skills grid */
+.skills-grid{display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:start}
+.skills-card{padding:20px}
+.software-card{padding:20px;display:flex;flex-direction:column;gap:12px}
+
+/* Skill bars */
+.skill-bars{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+.skill-bars li{display:flex;flex-direction:column;gap:6px}
+.skill-name{font-weight:600;color:var(--accent)}
+.skill-bar{background:rgba(255,255,255,0.04);height:12px;border-radius:999px;overflow:hidden}
+.skill-fill{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),#6ee7b7);border-radius:999px;transition:width 900ms cubic-bezier(.2,.9,.3,1)}
+
+/* Chips for software */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:600;border:1px solid rgba(255,255,255,0.03)}
+
+/* Card / visual tweaks */
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));padding:18px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(2,6,23,0.65);border:1px solid rgba(255,255,255,0.03);}
+.card h3{margin-top:0;color:#dbeafe}
+.card:hover{transform:translateY(-6px);transition:transform 220ms ease}
+
+.hero{padding:72px 0}
+.brand{font-size:1.05rem;letter-spacing:0.2px}
+.lead{font-size:1rem}
+
+.muted.small{color:var(--muted);font-size:0.9rem}
 .grid.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
 .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(2,6,23,0.6)}
 .card h3{margin-top:0}
@@ -42,4 +72,5 @@ body{
   .nav{position:fixed;right:16px;top:64px;background:var(--card);padding:12px;border-radius:10px;flex-direction:column;display:none}
   .nav.show{display:flex}
   .nav-toggle{display:inline-block}
+  .skills-grid{grid-template-columns:1fr}
 }
