@@ -5,9 +5,38 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const copyEmail = document.getElementById('copyEmail');
   const yearEl = document.getElementById('year');
 
-  navToggle && navToggle.addEventListener('click', ()=>{
-    mainNav.classList.toggle('show');
-  });
+  const closeNav = ()=>{
+    if(!navToggle || !mainNav) return;
+    mainNav.classList.remove('show');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open navigation');
+  };
+
+  if(navToggle && mainNav){
+    navToggle.addEventListener('click', ()=>{
+      const isOpen = mainNav.classList.toggle('show');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    });
+
+    mainNav.querySelectorAll('a[href^="#"]').forEach(link=>{
+      link.addEventListener('click', ()=> closeNav());
+    });
+
+    document.addEventListener('click', (event)=>{
+      if(!mainNav.classList.contains('show')) return;
+      if(mainNav.contains(event.target) || navToggle.contains(event.target)) return;
+      closeNav();
+    });
+
+    document.addEventListener('keydown', (event)=>{
+      if(event.key === 'Escape') closeNav();
+    });
+
+    window.addEventListener('resize', ()=>{
+      if(window.innerWidth > 800) closeNav();
+    });
+  }
 
   copyEmail && copyEmail.addEventListener('click', async ()=>{
     const email = 'mohdsaifsiddiqui10@gmail.com';
@@ -25,8 +54,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
   // Smooth scroll for internal links
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click', e=>{
-      const target = document.querySelector(a.getAttribute('href'));
-      if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
+      const href = a.getAttribute('href');
+      if(!href || href === '#') return;
+      const target = document.getElementById(href.slice(1));
+      if(target){
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth', block:'start'});
+      }
     });
   });
 
